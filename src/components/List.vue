@@ -9,7 +9,7 @@
           placeholder="type something"
           @blur="checkEmptyElement(index)"
         />
-          <button @click="removeElement(index)">-</button>
+        <button @click="removeElement(index)">-</button>
       </li>
     </ul>
   </div>
@@ -17,12 +17,13 @@
 
 <script>
 import { Vue, Component, Model } from "vue-property-decorator";
-import List from "../interfaces/List";
+import List from "../Models/List";
+import ListItem from "../Models/ListItem";
 
 @Component
 export default class ListComponent extends Vue {
   @Model("change", { type: String }) inputValue;
-  list = [];
+  list = new List();
   addNew() {
     this.list.push({
       value: null
