@@ -7,7 +7,6 @@
         <input
           v-model="element.value"
           placeholder="type something"
-          @keyup.enter="checkList()"
           @blur="checkEmptyElement(index)"
         />
           <button @click="removeElement(index)">-</button>
@@ -18,9 +17,10 @@
 
 <script>
 import { Vue, Component, Model } from "vue-property-decorator";
+import List from "../interfaces/List";
 
 @Component
-export default class List extends Vue {
+export default class ListComponent extends Vue {
   @Model("change", { type: String }) inputValue;
   list = [];
   addNew() {
@@ -34,7 +34,7 @@ export default class List extends Vue {
     }
   }
   removeElement(id) {
-      this.list.splice(id, 1);
+    this.list.splice(id, 1);
   }
 }
 </script>
