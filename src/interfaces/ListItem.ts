@@ -1,4 +1,4 @@
-interface ListItem {
-    title: string,
-    checked: boolean
+export default interface ListItem {
+  title: string;
+  checked: boolean;
 }

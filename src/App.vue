@@ -4,9 +4,9 @@
   </div>
 </template>
 <style>
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h1>Todo list</h1>
+  <!--   <h1>Todo list</h1>
     <button @click="addNew">Add new</button>
     <ul>
       <li v-for="(element, index) in list" :key="index">
@@ -11,20 +11,20 @@
         />
         <button @click="removeElement(index)">-</button>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
-import { Vue, Component, Model } from "vue-property-decorator";
+import { Vue, Component, Model, Prop } from "vue-property-decorator";
 import List from "../Models/List";
-import ListItem from "../Models/ListItem";
 
 @Component
 export default class ListComponent extends Vue {
-  @Model("change", { type: String }) inputValue;
-  list = new List();
-  addNew() {
+  @Prop() age!: number
+  @Model("input", { type: List }) readonly syncedList!: List;
+  
+/*   addNew() {
     this.list.push({
       value: null
     });
@@ -36,7 +36,7 @@ export default class ListComponent extends Vue {
   }
   removeElement(id) {
     this.list.splice(id, 1);
-  }
+  } */
 }
 </script>
 

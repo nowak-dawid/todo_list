@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-import 'vue-material-design-icons/styles.css';
+import "vue-material-design-icons/styles.css";
 
 Vue.use(VueRouter);
 
